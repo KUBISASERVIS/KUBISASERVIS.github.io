@@ -48,8 +48,35 @@ body{
 .grid.gallery{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
 .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow-lg);text-align:center}
 
-/* Gallery images */
-.gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px;cursor:pointer;display:block}
+/* Gallery images - lebih responsif, jangan pakai tinggi tetap */
+.gallery img{
+  width: 100%;
+  aspect-ratio: 4/3;       /* menjaga proporsi seragam */
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  display: block;
+}
+
+/* Hero image: batasi ukuran dan buat responsive */
+.hero-image img{
+  width: 100%;
+  max-width: 420px; /* batasi lebar gambar hero pada layar besar */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Penyesuaian untuk layar kecil (HP) */
+@media (max-width:600px){
+  .gallery{
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  .gallery img{ aspect-ratio: 4/3; } /* sedikit lebih pendek di HP */
+  .site-hero .container{ grid-template-columns: 1fr; align-items: start; }
+  .hero-image{ order: -1; margin-bottom: 16px; }
+}
 
 /* Footer */
 footer{background:#0b1220;color:#9aa4b2;text-align:center;padding:20px 0;font-size:14px}
