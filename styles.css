@@ -94,5 +94,4 @@ footer{background:#0b1220;color:#9aa4b2;text-align:center;padding:20px 0;font-si
 @media (max-width:900px){
   .site-hero .container{grid-template-columns:1fr}
   .hero-image{order:-1;margin-bottom:18px}
-  .gallery img{height:140px}
 }
